@@ -70,7 +70,8 @@ header nav ul li a {
 
 /* Página Inicial (Hero Section) */
 .hero {
-    background: url(''); /* Placeholder visual */
+    background: url('');
+    /* Placeholder visual */
     background-size: cover;
     background-position: center;
     color: white;
@@ -86,7 +87,8 @@ header nav ul li a {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* Overlay escuro */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Overlay escuro */
     z-index: 1;
 }
 
@@ -105,8 +107,125 @@ header nav ul li a {
     margin-bottom: 20px;
 }
 
+/*Calculadora*/
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    display: grid;
+    place-items: center;
+    min-height: 90vh;
+    background-color: #f4f7f6;
+    color: #333;
+    margin: 0;
+}
+
+#calculator-container {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 450px;
+}
+
+h2 {
+    text-align: center;
+    color: #1a1a1a;
+    margin-top: 0;
+    margin-bottom: 2rem;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    /* Garante que o padding não afete a largura */
+    font-size: 1rem;
+}
+
+/* Estilo para o input de valor */
+.input-group.valor {
+    position: relative;
+}
+
+.input-group.valor::before {
+    content: 'R$';
+    position: absolute;
+    left: 12px;
+    top: 42px;
+    /* Ajuste para alinhar com o texto do input */
+    color: #888;
+    font-size: 1rem;
+}
+
+.input-group.valor input {
+    padding-left: 3rem;
+    /* Espaço para o "R$" */
+}
+
+
+button {
+    width: 100%;
+    padding: 1rem;
+    background-color: #005A9C;
+    /* Um azul "premium" */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #004170;
+}
+
+#result {
+    margin-top: 2rem;
+    text-align: center;
+    border-top: 1px solid #eee;
+    padding-top: 2rem;
+}
+
+#result h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #555;
+}
+
+#totalCost {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #005A9C;
+    margin-top: 0.5rem;
+}
+
+#logicApplied {
+    font-size: 0.9rem;
+    color: #777;
+    margin-top: 0.5rem;
+    height: 1.2em;
+    /* Reserva espaço para não "pular" */
+}
+
 /* Formulário de Cadastro */
-.cadastro, .produtos {
+.cadastro,
+.produtos {
     padding: 40px 0;
 }
 
@@ -150,7 +269,8 @@ header nav ul li a {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: calc(33% - 20px); /* 3 cards por linha */
+    width: calc(33% - 20px);
+    /* 3 cards por linha */
     text-align: center;
 }
 

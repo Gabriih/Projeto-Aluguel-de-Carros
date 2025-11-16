@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Locadora de Carros - Início</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <div class="container">
-            <h1>Car Rental 🚗</h1>
+            <h1>Zenith</h1>
             <nav>
                 <ul>
                     <li><a href="index.html">Início</a></li>
@@ -23,15 +25,48 @@
     <main class="hero">
         <div class="container">
             <h2>Alugue o Carro Perfeito para Sua Viagem!</h2>
-            <p>Temos uma frota diversificada para atender a todas as suas necessidades, desde carros econômicos até SUVs de luxo.</p>
+            <p>Temos uma frota diversificada para atender a todas as suas necessidades, desde carros econômicos até SUVs
+                de luxo.</p>
             <a href="produtos.html" class="cta-button">Ver Frota Disponível</a>
         </div>
     </main>
+
+    <div id="calculator-container">
+        <h2>Calculadora de Aluguel</h2>
+
+        <div class="input-group valor">
+            <label for="carValue">Valor Mensal do Carro</label>
+            <input type="number" id="carValue" placeholder="25000">
+        </div>
+
+        <div class="input-group">
+            <label for="duration">Tempo de Aluguel</label>
+            <input type="number" id="duration" placeholder="3">
+        </div>
+
+        <div class="input-group">
+            <label for="unit">Unidade de Tempo</label>
+            <select id="unit">
+                <option value="meses">Meses</option>
+                <option value="semanas">Semanas</option>
+            </select>
+        </div>
+
+        <button id="calculateBtn">Calcular</button>
+
+        <div id="result">
+            <h3>Valor Total Estimado:</h3>
+            <div id="totalCost">R$ 0,00</div>
+            <small id="logicApplied"></small>
+        </div>
+    </div>
 
     <footer>
         <div class="container">
             <p>&copy; 2025 Car Rental. Todos os direitos reservados.</p>
         </div>
+        <script src="calculadora.js"></script>
     </footer>
 </body>
+
 </html>
