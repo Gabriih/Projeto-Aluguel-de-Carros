@@ -43,17 +43,17 @@ document.addEventListener('DOMContentLoaded', function(){
         let erro = '';
 
         //valida se os campos obrigatorios nao estao vazios
-        if (nome === '' || email === '' || senha === '' || cpf === ''){
+        if (nomeVal === '' || emailVal === '' || senhaVal === '' || cpfVal === ''){
             erro += 'Todos os campos são obrigatórios.\n';
         }
 
         //checa o formato do e-mail
-        if (email !== '' && !emailRegex.test(email)){
+        if (emailVal !== '' && !emailRegex.test(emailVal)){
             erro += 'Por favor, insira um e-mail válido.\n';
         }
 
         //checa se a senha tem menos de 6 caracteres
-        if (senha !== '' && senha.length < 6){
+        if (senhaVal !== '' && senhaVal.length < 6){
             erro += 'A senha deve ter no mínimo 6 caracteres.\n';
         }
 
