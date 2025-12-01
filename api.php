@@ -1,20 +1,24 @@
 <?php
 // 1. Configuração do Banco de Dados
-$host = 'localhost';      // Ou o host do seu DB
+$host = 'zenithif.database.windows.net';      // Ou o host do seu DB
 $db_name = 'zenith_db'; // O nome que você criou
-$username = 'root';       // Usuário padrão do XAMPP
+$username = 'CloudSA7c7b6583';       // Usuário padrão do XAMPP
 $password = '';           // Senha padrão do XAMPP
 
-// 2. Conexão com o DB (Usando PDO para segurança)
+// PHP Data Objects(PDO) Sample Code:
 try {
-    $pdo = new PDO("mysql:host=$host;dbname=$db_name;charset=utf8", $username, $password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    // Se a conexão falhar, envia uma resposta de erro
-    http_response_code(500); // Erro interno do servidor
-    echo json_encode(['status' => 'erro', 'mensagem' => 'Falha na conexão com o banco de dados.']);
-    exit(); // Para o script
+    $conn = new PDO("sqlsrv:server = tcp:zenithif.database.windows.net,1433; Database = zenith_db", "CloudSA7c7b6583", "{your_password_here}");
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
+catch (PDOException $e) {
+    print("Error connecting to SQL Server.");
+    die(print_r($e));
+}
+
+// SQL Server Extension Sample Code:
+$connectionInfo = array("UID" => "CloudSA7c7b6583", "pwd" => "{your_password_here}", "Database" => "zenith_db", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
+$serverName = "tcp:zenithif.database.windows.net,1433";
+$conn = sqlsrv_connect($serverName, $connectionInfo);
 
 // 3. Receber os dados do JavaScript (JSON)
 // O PHP não entende JSON vindo do 'body' por padrão, então lemos o input "cru"
@@ -38,7 +42,7 @@ $senhaHash = password_hash($dados->senha, PASSWORD_DEFAULT);
 // 6. Inserir no Banco de Dados (com Prepared Statements)
 // Isso previne SQL Injection!
 try {
-    $sql = "INSERT INTO usuarios (nome, email, senha, cpf) VALUES (:nome, :email, :senha, :cpf)";
+    $sql = "INSERT INTO clientes (nome, email, senha, cpf) VALUES (:nome, :email, :senha, :cpf)";
     $stmt = $pdo->prepare($sql);
     
     $stmt->execute([
