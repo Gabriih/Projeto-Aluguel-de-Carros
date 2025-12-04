@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Minha Conta</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Zenith</h1>
+            <nav>
+                <ul></ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h2>Olá, <span id="nome-usuario"></span>!</h2>
+
+        <div class="secao-dashboard">
+            <h3>🚙 Em Andamento (Ativos)</h3>
+            <div id="lista-ativos" class="car-list">
+                </div>
+        </div>
+
+        <hr style="margin: 40px 0;">
+
+        <div class="secao-dashboard">
+            <h3>📜 Histórico de Aluguéis</h3>
+            <table style="width: 100%; border-collapse: collapse;">
+                <thead>
+                    <tr style="background: #ddd; text-align: left;">
+                        <th>Carro</th>
+                        <th>Data Início</th>
+                        <th>Data Devolução</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="lista-historico">
+                    </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script src="minha_conta.js"></script>
+    <script src="menu.js"></script>
+</body>
+</html>

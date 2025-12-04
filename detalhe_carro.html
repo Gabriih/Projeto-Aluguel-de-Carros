@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Veículo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Zenith</h1>
+            <nav>
+                <ul></ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="detalhes-produto">
+        <div class="container">
+            <div class="info-carro" style="background-color: var(--card-bg); padding: 40px; border-radius: 5px; border: 1px solid var(--border-color);">
+                <img id="carro-img" src="" alt="Foto do Carro" style="width:100%; max-width:600px; border-radius: 5px; margin-bottom: 20px;">
+                
+                <h2 id="carro-nome" style="color: var(--gold-primary);">Carregando...</h2>
+                <p id="carro-tipo" style="color: #ccc; font-style: italic;">Categoria...</p>
+                <hr style="border-color: #333; margin: 20px 0;">
+                
+                <h1 id="carro-preco" style="color: var(--gold-primary); font-size: 2.5rem; margin-bottom: 20px;"></h1>
+                
+                <p style="margin-bottom: 20px;">Status: <span id="carro-status" style="font-weight: bold;"></span></p>
+
+                <button id="btn-alugar" class="cta-button" style="width: 100%; font-size: 1.2rem;">Confirmar Aluguel</button>
+                
+                <p id="mensagem-erro" style="color: var(--status-erro); margin-top: 10px;"></p>
+            </div>
+        </div>
+    </main>
+
+    <script src="detalhe.js"></script>
+    <script src="menu.js"></script>
+</body>
+</html>

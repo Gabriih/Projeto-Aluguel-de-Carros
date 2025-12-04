@@ -1,24 +1,5 @@
 <?php
-// 1. Configuração do Banco de Dados
-$host = 'zenithif.database.windows.net';      // Ou o host do seu DB
-$db_name = 'zenith_db'; // O nome que você criou
-$username = 'CloudSA7c7b6583';       // Usuário padrão do XAMPP
-$password = '';           // Senha padrão do XAMPP
-
-// PHP Data Objects(PDO) Sample Code:
-try {
-    $conn = new PDO("sqlsrv:server = tcp:zenithif.database.windows.net,1433; Database = zenith_db", "CloudSA7c7b6583", "{your_password_here}");
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-}
-catch (PDOException $e) {
-    print("Error connecting to SQL Server.");
-    die(print_r($e));
-}
-
-// SQL Server Extension Sample Code:
-$connectionInfo = array("UID" => "CloudSA7c7b6583", "pwd" => "{your_password_here}", "Database" => "zenith_db", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
-$serverName = "tcp:zenithif.database.windows.net,1433";
-$conn = sqlsrv_connect($serverName, $connectionInfo);
+require 'conexao.php';
 
 // 3. Receber os dados do JavaScript (JSON)
 // O PHP não entende JSON vindo do 'body' por padrão, então lemos o input "cru"
@@ -42,7 +23,7 @@ $senhaHash = password_hash($dados->senha, PASSWORD_DEFAULT);
 // 6. Inserir no Banco de Dados (com Prepared Statements)
 // Isso previne SQL Injection!
 try {
-    $sql = "INSERT INTO clientes (nome, email, senha, cpf) VALUES (:nome, :email, :senha, :cpf)";
+    $sql = "INSERT INTO usuarios (nome, email, senha, cpf) VALUES (:nome, :email, :senha, :cpf)";
     $stmt = $pdo->prepare($sql);
     
     $stmt->execute([
